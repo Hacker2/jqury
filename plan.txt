@@ -1,0 +1,17 @@
+1. jqury 500pages start 22.04
+2. node js 300pages start 06.05
+3. react 300 pages start 20.05
+4. angular 800 pages start 03.06
+5. linux 1000+ pages start 01.07
+6. android 700 pages start 01.08
+7. english 400 pages start 01.09
+8. photoshop 900 pages start 15.09
+9. php 900 pages start 01.10
+10. c++ 900 pages start 01.11
+11. assembler 800 pages start 01.12
+
+12. hack
+13. patterns
+14. java ocp 8
+15. hibernate
+16. spring

@@ -3,12 +3,66 @@
 <script src="jquery-3.4.0.min.js" type="text/javascript"></script>
 <script>
 
-console.log($('#id'));
+jQuery(document).ready(function() {
+//jQuery(function() {
 
+console.log($('#hi'));
+console.log(jQuery('#hi'));
+//console.log($('#hi', '#in'));
+console.log($('div'));
+console.log($('*'));
+console.log($('#id'));
+console.log($('.className'));
+console.log($('div#in.className'));
+console.log($('div, span'));
+console.log($('div#hi > span'));
+console.log($('div[id=hi]'));
+console.log($('div[id!=hi]'));
+//console.log($('div[id!^=hi]'));//no
+console.log($('div[id=in][class="className secondClass"]'));
+console.log($('div:first'));
+console.log($('div:last'));
+console.log($('div:even'));
+console.log($('div:odd'));
+console.log($('div:eq(0)'));
+console.log($('div:gt(0)'));
+console.log($('div:lt(1)'));
+console.log($('div:last-child'));
+console.log($('div:nth-child(1)'));
+//$('input[type="checkbox"]:checked');
+$('input:checkbox:checked');//:button :checkbox :checked :disabled :enabled :file :focus
+//:image :input :password :radio :reset :selected :submit :text
+console.log($('div:has(span)'));
+console.log($('div:has(#in)'));
+console.log($('div:empty'));
+console.log($('div:contains("this is span")'));
+console.log($('div:parent'));
+console.log($('div:not(#hi)'));
+console.log($(':not(#hi)'));
+//:hiden :visible
+
+$.expr[':'].test = $.expr.createPseudo(function(filterParam) {
+return function(element, context, isXml) {
+return element.getAttribute('data-test') != undefined;
+};
+});
+
+console.log($(':test'));
+
+$("#hi").css("background-color", "yellow").show("fast");
+
+
+});
 </script>
 <body>
 
-<div id="hi">hello world</div>
+<div id="hi">hello world
+<div id="in" class="className secondClass">inner line</div>
+<span>this is span</span>
+</div>
+
+<div id='empty' data-test='true'></div>
+
 
 </body>
 </html>
