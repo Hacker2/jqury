@@ -1,0 +1,56 @@
+<html>
+<script src="jquery-3.4.0.min.js" type="text/javascript"></script>
+<script>
+
+jQuery(document).ready(function() {
+
+var one = document.getElementById('one');
+console.log(one.getAttribute('id') === one.id);
+
+one.id = 'New id!';
+console.log(one.getAttribute('id') === one.id);
+
+one.setAttribute('name', 'Another name!');
+console.log(one.getAttribute('name') === one.name);
+
+console.log(typeof one.getAttribute('draggable'));
+console.log(typeof one.draggable);
+
+console.log($('#main').attr('name'));
+$('#main').attr('name', 'new value');
+console.log($('#main').attr('name'));
+$('#main').attr({name: 'test', class:'red'});
+console.log($('#main').attr('name'));
+console.log($('#main').attr('class'));
+$('#main').removeAttr('name');
+console.log($('#main').attr('name'));
+
+console.log($('#main').prop('id'));
+$('#main').prop('name', 'new value');
+console.log($('#main').prop('name'));
+
+//$('#two').prop('draggable', false);
+//$('#two').attr('draggable', false);
+//console.log($('#two').attr('draggable') === true);
+//console.log($('#one').prop('draggable') === true);
+
+});
+</script>
+<body>
+<div id="main" name='first'>
+<div id="one" draggable='true'>one</div>
+<div id="two" draggable='true'>two</div>
+<div id="three">three</div>
+<div id="four">four</div>
+</div>
+
+<span id="s">
+<span id="o">s one</span>
+<span id="t">s two</span>
+<span id="th">s three</span>
+<span id="f">s four</span>
+</span>
+
+
+</body>
+</html>
