@@ -34,13 +34,34 @@ console.log($('#main').prop('name'));
 //console.log($('#two').attr('draggable') === true);
 //console.log($('#one').prop('draggable') === true);
 
+$('#two').data('test', {a:5});
+console.log($('#two').data('test'));
+console.log($('#three').data('test'));
+$('#three').data('test','new value');
+console.log($('#three').data('test'));
+console.log($('#three').attr('data-test'));
+$('#three').attr('data-test', 'hi');
+console.log($('#three').data('test'));
+console.log($('#three').attr('data-test'));
+console.log($('#three').data());
+
+$('#two').removeData('test');
+//$('#two').removeData(['test','test2']);
+console.log($('#two').data('test'));
+
+$.data(document.getElementById('four'), 'price', 10);
+console.log($.data(document.getElementById('four'), 'price'));
+$.removeData(document.getElementById('four'), 'price');
+console.log($.data(document.getElementById('four'), 'price'));
+console.log($.hasData(document.getElementById('four')));
+
 });
 </script>
 <body>
 <div id="main" name='first'>
 <div id="one" draggable='true'>one</div>
 <div id="two" draggable='true'>two</div>
-<div id="three">three</div>
+<div id="three" data-test="hello">three</div>
 <div id="four">four</div>
 </div>
 
