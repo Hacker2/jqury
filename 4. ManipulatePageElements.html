@@ -4,25 +4,74 @@
 
 jQuery(document).ready(function() {
 
+$('#hi').addClass('red');
+$('#hi').addClass('border');
+$('#hi').removeClass('border');
+$('#hi').toggleClass('border');
+$('#hi').toggleClass('border', true);
+$('#hi').toggleClass('border', function(index) {return index == 1});
+console.log($('#hi').hasClass('border'));
+$('#hi').css('color','green');
+$('#hi').css('color', function(index, color) {return 'orange'});
+$('#hi').css('font-size','+=15');
+$('#hi').css({fontSize: '20', color: 'red', border: function(){return 'solid 1px';}});
 
+console.log($('#hi').css('border'));
+console.log($('#hi').css(['border','color']));
+
+$('#hi').height(50);
+$('#hi').width(200);
+
+console.log($('#hi').offset());
+console.log($('#hi').position());
+
+console.log($('#hi').html());
+$('#hi').html('<b>' + $('#hi').text() + '</b>');
+$('#hi').text('test');
+
+$('body').append($('#hi'),'<div>append</div>');
+$('body').prepend('<div>prepend</div>');
+$('#hi').before('<div>before</div>');
+$('#hi').after('<div>after</div>');
+
+$('<div>apend html</div>').appendTo('body');
+$('<div>prepend html</div>').prependTo('body');
+$('<div>before</div>').insertBefore('#hi');
+$('<div id="after">after</div>').insertAfter('#hi');
+
+$('#hi').wrap('<div id="wrap"></div>');
+$('#hi').wrap($('#after'));
+$('#hi').wrapAll($('#after'));
+$('#hi').wrapInner('<div id="inner wrap"></div>');
+$('#hi').unwrap($('#after'));
+$('#hi').unwrap($('#after'));
+
+$('#after').remove();
+$('#after').remove('div');
+$('#after').detach();
+$('#hi').empty().text('new text');
+
+$('#hi').clone().appendTo('body');
+$('#hi').replaceWith('asdf');
+
+$('#in').val('hello');
+console.log($('#in').val());
 
 });
 </script>
+<style>
+.red{
+color: red;
+}
+.border {
+border: solid 1px;
+}
+</style>
 <body>
-<div id="main" name='first'>
-<div id="one" draggable='true'>one</div>
-<div id="two" draggable='true'>two</div>
-<div id="three" data-test="hello">three</div>
-<div id="four">four</div>
-</div>
 
-<span id="s">
-<span id="o">s one</span>
-<span id="t">s two</span>
-<span id="th">s three</span>
-<span id="f">s four</span>
-</span>
+<div id='hi'>hello world</div>
 
+<input type="text" id="in">
 
 </body>
 </html>
