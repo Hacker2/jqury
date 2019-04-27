@@ -4,7 +4,22 @@
 
 jQuery(document).ready(function() {
 
-$('#hi');
+//$('#hi').on('click', event => console.log('hello'));
+//$('body').on('click', '#hi', event => console.log('hello'));
+//$('body').on('click', '#hi', 'some data', event => {console.log(event.data);});
+//bind delegate live deprecated
+//$('#hi').on('click', event => console.log('hello'))
+//.on('mouseenter mouseleave', e => console.log('mouse'));
+//$('#hi').on({click: event => console.log('hello2'),
+//mouseleave: e => console.log('mouse')});
+//$('#hi').one('click', event => console.log('hello'));
+//$('#hi').off('click');
+//unbind undelegate die deprecated
+//$('#hi').on('click', function(event,data, data2) {console.log(data);console.log(data2);});
+//$('#hi').trigger('click', ['some data', 'more data']);
+$('#hi').click(x => console.log('clicked'));
+$('#hi').click();
+
 
 });
 </script>
