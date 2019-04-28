@@ -1,0 +1,89 @@
+<html>
+<script src="jquery-3.4.0.min.js" type="text/javascript"></script>
+<script>
+
+jQuery(document).ready(function() {
+
+//$.fx.off = true;
+//$('#hi').hide(2000);
+
+console.log($.support);
+
+//$.noConflict();
+//console.log($('#hi'));
+//console.log(jQuery('#hi'));
+
+//window.$new = $.noConflict(true);
+//console.log($new('#hi'));
+
+console.log("'" + $.trim('  sdf  sf  ') + "'");
+
+$.each([1,2,3],function(index,value) {console.log(value);});
+$.each({a:5,b:6},function(name,value) {console.log(name + ' = ' +value);});
+$.each([1,2,3],function(index,value) {console.log(value);return false;});
+
+var $divs = $('div');
+for (var el of $divs) {
+  console.log(el);
+}
+
+console.log($.grep([1,2,3,4,1], function(value) {return value >= 2;}));
+console.log($.grep([1,2,3,4,1], function(value) {return value >= 2;},true));
+
+console.log($.map([1,2,3,4,1], function(value) {return value * 2;}));
+
+console.log($.inArray(5,[1,2,3,4,1]));
+console.log($.inArray(2,[1,2,3,2,1]));
+console.log($.inArray(2,[1,2,3,2,1],3));
+
+console.log(document.getElementsByTagName('div'));
+console.log($.makeArray(document.getElementsByTagName('div')));
+
+console.log($.merge([1,2,3],[4,5]));
+
+var target = {a: 1, b: 2, c: 3};
+var source1 = {c: 4, d: 5, e: 6};
+var source2 = {c: 7, e: 8, f: 9};
+console.log($.extend(target, source1));
+console.log($.extend(target, source1, source2));
+
+console.log($.param({
+'a thing': 'it&s=value',
+'another thing': 'another value',
+'weird characters': '!@#$%^&*()_+='
+}));
+
+console.log($.isArray([]));
+console.log($.isEmptyObject({}));
+console.log($.isFunction(x=>x));
+console.log($.isNumeric(5));
+console.log($.isPlainObject({a:5}));
+console.log($.isWindow(window));
+
+console.log($.type(5));
+console.log($.type(true));
+console.log($.type(''));
+console.log($.type({}));
+console.log($.type([]));
+console.log($.type(x=>x));
+
+$.noop();//do nothing
+console.log($.contains(document.getElementById('body'),document.getElementById('hi')));
+
+var f = $.proxy(function(){console.log(this.a)}, {a:5});
+f();
+
+//$.error('this is error');
+
+
+});
+</script>
+<body id='body'>
+
+<div id='hi'>hello world</div>
+<div id='hi2'>hello world</div>
+<div id='hi3'>hello world</div>
+<div id='hi3'>hello world</div>
+
+</body>
+</html>
