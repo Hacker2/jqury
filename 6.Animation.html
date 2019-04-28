@@ -1,0 +1,82 @@
+<html>
+<script src="jquery-3.4.0.min.js" type="text/javascript"></script>
+<script>
+
+jQuery(document).ready(function() {
+
+$('#hi').hide();
+$('#hi').show();
+
+$('#hi').toggle();
+$('#hi').toggle();
+
+//$('#hi').hide(2000);
+//$('#hi').show(2000);
+//$('#hi').toggle(2000);
+
+//$('#hi').hide(2000, function() {
+//  console.log('done');
+//});
+
+//$('#hi').hide('slow');
+//$('#hi').hide('fast');
+
+//$('#hi').fadeOut();
+//$('#hi').fadeIn();
+//$('#hi').fadeToggle();
+
+//$('#hi').fadeOut(2000);
+//$('#hi').fadeIn(2000);
+
+//$('#hi').fadeToggle(2000);
+//$('#hi').fadeToggle(2000);
+
+//$('#hi').fadeTo(2000, 0.5);
+//$('#hi').fadeTo(2000, 0.1);
+
+//$('#hi').slideUp();
+//$('#hi').slideDown();
+
+//$('#hi').slideUp(2000);
+//$('#hi').slideDown(2000);
+
+//$('#hi').slideUp(2000);
+//$('#hi').stop();
+//$('#hi').stop(true,true);//clear queue,finish
+//$('#hi').finish();
+
+//$('#hi').animate({fontSize: 24});
+//$('#hi').animate({fontSize: 24},2000);
+
+//console.log(1);
+//$('#hi').hide(2000);
+//console.log(2);
+
+//$('#hi').hide(2000, function() {
+// $('#hi').animate({fontSize: 24},2000);
+//});
+
+/*$('#hi').queue('myQueue', function() {
+  console.log('test');
+});
+$('#hi').queue('myQueue', function() {
+  console.log('test2');
+});
+$('#hi').dequeue('myQueue');
+//$('#hi').clearQueue('myQueue');
+$('#hi').dequeue('myQueue');
+*/
+
+$('#hi').hide(2000);
+$('#hi').show(2000);
+$('#hi').queue('fx', x => console.log('tset'));
+
+
+});
+</script>
+<body>
+
+<div id='hi' style='display:inline'>hello </div><span>world</span
+
+</body>
+</html>

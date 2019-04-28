@@ -20,6 +20,15 @@ jQuery(document).ready(function() {
 $('#hi').click(x => console.log('clicked'));
 $('#hi').click();
 
+//$('#hi').hover(x => console.log('enter'), x => console.log('leave'));
+
+$('#hi').on('customEvent', function(){
+  console.log('customEvent');
+});
+$('#hi').click(function() {
+  $('#hi').trigger('customEvent');
+});
+
 
 });
 </script>
